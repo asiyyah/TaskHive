@@ -19,7 +19,7 @@
   --green-50: #e6f2ee;
   --teal-50: #e9fffd;
   --red-50: #fce9ea;
-  --color-cyan: #32ade6;
+  --color-blue: #3b82f6;
   --color-red: #e44b59;
   --color-yellow: #e8b006;
   --color-sidebar-bg: #ffffff;
@@ -33,16 +33,19 @@
   --muted-foreground: #64748b;
   --muted: #f1f5f9;
   --radius: 0.5rem;
-  --border: #e2e8f0;
+  --border: #eeeeee;
+  --border-sec: #d1d5db;
   --card: #fff;
   --sidebar-border: #e2e8f0;
   --background-default: #fff;
   --background-grey: #f5f6fa;
+  --bg-ivory: #f4f4f4;
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  align-items: stretch;
 }
 
 /* --------------------------------------
@@ -212,17 +215,21 @@
 /* Main */
 .main {
   margin-left: 240px; /* Width of the sidebar */
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   flex-grow: 1;
   background-color: var(--color-main-bg);
-  min-height: 100vh;
+  min-height: 0;
+  row-gap: 1.5rem;
+  overflow-x: hidden;
 }
 
 .navigation {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .right {
@@ -269,6 +276,7 @@
 }
 
 .view {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -337,4 +345,150 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-ivory);
+  color: var(--color-grey);
+  border: none;
+  border-radius: var(--radius);
+  font-size: clamp(0.875rem, 1vw + 0.1rem, 1rem);
+  line-height: 1.4;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-ivory);
+  color: #414040;
+  border: var(--border-sec) 1px solid;
+  border-radius: var(--radius);
+  font-size: clamp(0.875rem, 1vw + 0.1rem, 1rem);
+  line-height: 1.4;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Board */
+.board {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  overflow-x: auto;
+  flex: 1 0 auto; /* grow to fill vertical space */
+  min-height: 0;
+  align-items: stretch;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  border-radius: var(--radius);
+  align-self: stretch;
+  min-width: 300px;
+  height: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.column-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column-header h3 {
+  font-size: clamp(1rem, 1vw + 0.2rem, 1.25rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.task-count {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.75rem, 1vw + 0.1rem, 1rem);
+  line-height: 1.4;
+  padding: 0.25rem;
+  background-color: var(--color-grey);
+  color: var(--white);
+  border-radius: 9999px;
+}
+
+.task-count.n {
+  background-color: var(--color-grey);
+}
+
+.task-count.p {
+  background-color: var(--color-blue);
+}
+
+.task-count.c {
+  background-color: var(--color-green);
+}
+
+.task-count.o {
+  background-color: var(--color-red);
+}
+
+.column-task h4 {
+  font-size: clamp(0.75rem, 1vw + 0.2rem, 1rem);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.column-task {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: var(--border) 1px solid;
+  border-radius: var(--radius);
+  background-color: var(--card);
+}
+
+.task {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 1.5px;
+  stroke: var(--color-grey);
+  opacity: 0;
+  transform: translateY(-2px) scale(0.98);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: none;
+  color: var(--muted-foreground);
+  align-self: center;
+}
+
+.task:hover .task-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.date p {
+  font-size: clamp(0.625rem, 1vw + 0.1rem, 0.875rem);
+  line-height: 1.4;
 }
