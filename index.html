@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exam Results</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- App Logo/Name -->
+        <div class="logo">
+          <div class="icon-cont">
+            <h5>TH</h5>
+          </div>
+          <p>TaskHive</p>
+        </div>
+        <!-- Side Navs -->
+        <div class="side-navs">
+          <div class="section">
+            <div class="group-title">
+              <h3>Main</h3>
+            </div>
+
+            <div class="list">
+              <div class="nav-link">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <a href="#">Dashboard</a>
+              </div>
+
+              <div class="nav-link">
+                <i data-lucide="message-square-text" class="nav-icon"></i>
+                <a href="#">Messages</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teams -->
+          <div class="section">
+            <div class="group-title">
+              <h3>Teams</h3>
+            </div>
+
+            <div class="list">
+              <div class="nav-link active">
+                <i data-lucide="square-check-big" class="nav-icon active"></i>
+                <a href="#">Tasks</a>
+              </div>
+
+              <div class="nav-link">
+                <i data-lucide="file-text" class="nav-icon"></i>
+                <a href="#">Docs</a>
+              </div>
+
+              <div class="nav-link">
+                <i data-lucide="calendar" class="nav-icon"></i>
+                <a href="#">Calendar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Help Center -->
+        <div class="section help">
+          <div class="list">
+            <div class="nav-link">
+              <i data-lucide="settings" class="nav-icon"></i>
+              <a href="#">Settings</a>
+            </div>
+
+            <div class="nav-link">
+              <i data-lucide="circle-help" class="nav-icon"></i>
+              <a href="#">Help Center</a>
+            </div>
+
+            <div class="nav-link">
+              <i data-lucide="log-out" class="nav-icon"></i>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Dashboard Content -->
+      <div class="main">
+        <!-- Top Nav -->
+        <div class="navigation">
+          <div class="left">
+            <div class="breadcrumbs">Teams / <span>Tasks</span></div>
+          </div>
+
+          <div class="right">
+            <i data-lucide="bell" class="icon-action"></i>
+            <div class="user-avatar">AA</div>
+          </div>
+        </div>
+
+        <!-- Content Header -->
+        <div class="content-header">
+          <div class="heading-left">
+            <h2>Tasks</h2>
+
+            <div class="view">
+              <div class="view-toggle">
+                <i data-lucide="table" class="icon-action"></i>
+                <h4>Table</h4>
+              </div>
+
+              <div class="view-toggle active">
+                <i data-lucide="columns-3" class="icon-action"></i>
+                <h4>Board</h4>
+              </div>
+
+              <div class="view-toggle">
+                <i data-lucide="square-chart-gantt" class="icon-action"></i>
+                <h4>Timeline</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-actions">
+            <i data-lucide="list-filter" class="icon-action"></i>
+
+            <i data-lucide="arrow-down-wide-narrow" class="icon-action"></i>
+
+            <i data-lucide="search" class="icon-action"></i>
+
+            <button class="btn-primary">
+              <i data-lucide="plus" class="icon"></i>
+              New Task
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
