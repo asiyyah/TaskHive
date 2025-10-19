@@ -492,3 +492,142 @@
   font-size: clamp(0.625rem, 1vw + 0.1rem, 0.875rem);
   line-height: 1.4;
 }
+
+/* -------------------------
+   Responsive breakpoints
+------------------------- */
+
+/* Tablet and small laptops: collapse sidebar to icons-only, reduce paddings */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .logo p,
+  .group-title h3,
+  .nav-link a {
+    display: none; /* show icons only */
+  }
+
+  .icon-cont {
+    padding: 0.4rem;
+  }
+  .logo {
+    padding: 1rem 0.5rem;
+  }
+
+  .main {
+    margin-left: 72px; /* match collapsed sidebar */
+    padding: 1.25rem;
+  }
+
+  .view-toggle h4 {
+    display: none;
+  } /* keep icon-only view toggles */
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .board {
+    gap: 1rem;
+  }
+  .column {
+    min-width: 240px;
+    padding: 1rem;
+  }
+}
+
+/* Small tablets / large phones: hide sidebar, give main full width,
+   allow board to horizontally scroll with narrower columns */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Board becomes horizontally scrollable; columns narrower */
+  .board {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* columns behave like cards you can swipe horizontally */
+  .column {
+    min-width: 80%;
+    flex: 0 0 80%;
+    padding: 0.875rem;
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .column-header h3 {
+    font-size: 1rem;
+  }
+  .task h4 {
+    font-size: 0.95rem;
+  }
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.75rem;
+  }
+}
+
+/* Phones and very small screens: stack columns (optional) and tighten spacing */
+@media (max-width: 480px) {
+  /* keep sidebar hidden */
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 0.75rem;
+  }
+
+  /* make each column nearly full-width to improve legibility */
+  .column {
+    min-width: 70%;
+    flex: 0 0 70%;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .column-header h3 {
+    font-size: 0.95rem;
+  }
+  .task h4 {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* reduce header actions density */
+  .header-actions .icon-action {
+    display: none;
+  } /* show only primary actions */
+  .btn-primary {
+    padding: 0.4rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 20%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0;
+    font-size: 0; /* hide inline text labels while keeping SVG icon visible */
+  }
+
+  .btn-primary.icon {
+    width: 1rem;
+    height: 1rem;
+    stroke-width: 1.75px;
+    color: var(--white);
+    stroke: currentColor;
+  }
+}
