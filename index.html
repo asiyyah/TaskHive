@@ -26,12 +26,12 @@
             </div>
 
             <div class="list">
-              <div class="nav-link">
+              <div class="nav-link" id="nav-dashboard">
                 <i data-lucide="layout-dashboard" class="nav-icon"></i>
                 <a href="#">Dashboard</a>
               </div>
 
-              <div class="nav-link">
+              <div class="nav-link" id="nav-messages">
                 <i data-lucide="message-square-text" class="nav-icon"></i>
                 <a href="#">Messages</a>
               </div>
@@ -45,17 +45,17 @@
             </div>
 
             <div class="list">
-              <div class="nav-link active">
+              <div class="nav-link active" id="nav-tasks">
                 <i data-lucide="square-check-big" class="nav-icon active"></i>
                 <a href="#">Tasks</a>
               </div>
 
-              <div class="nav-link">
+              <div class="nav-link" id="nav-docs">
                 <i data-lucide="file-text" class="nav-icon"></i>
                 <a href="#">Docs</a>
               </div>
 
-              <div class="nav-link">
+              <div class="nav-link" id="nav-calendar">
                 <i data-lucide="calendar" class="nav-icon"></i>
                 <a href="#">Calendar</a>
               </div>
@@ -66,17 +66,17 @@
         <!-- Help Center -->
         <div class="section help">
           <div class="list">
-            <div class="nav-link">
+            <div class="nav-link" id="nav-settings">
               <i data-lucide="settings" class="nav-icon"></i>
               <a href="#">Settings</a>
             </div>
 
-            <div class="nav-link">
+            <div class="nav-link" id="nav-help">
               <i data-lucide="circle-help" class="nav-icon"></i>
               <a href="#">Help Center</a>
             </div>
 
-            <div class="nav-link">
+            <div class="nav-link" id="nav-logout">
               <i data-lucide="log-out" class="nav-icon"></i>
               <a href="#">Logout</a>
             </div>
@@ -93,8 +93,8 @@
           </div>
 
           <div class="right">
-            <i data-lucide="bell" class="icon-action"></i>
-            <div class="user-avatar">AA</div>
+            <i data-lucide="bell" class="icon-action" id="notifications"></i>
+            <div class="user-avatar" id="user-profile">AA</div>
           </div>
         </div>
 
@@ -104,17 +104,17 @@
             <h2>Tasks</h2>
 
             <div class="view">
-              <div class="view-toggle">
+              <div class="view-toggle" id="view-table">
                 <i data-lucide="table" class="icon-action"></i>
                 <h4>Table</h4>
               </div>
 
-              <div class="view-toggle active">
+              <div class="view-toggle active" id="view-board">
                 <i data-lucide="columns-3" class="icon-action"></i>
                 <h4>Board</h4>
               </div>
 
-              <div class="view-toggle">
+              <div class="view-toggle" id="view-timeline">
                 <i data-lucide="square-chart-gantt" class="icon-action"></i>
                 <h4>Timeline</h4>
               </div>
@@ -122,13 +122,13 @@
           </div>
 
           <div class="header-actions">
-            <i data-lucide="list-filter" class="icon-action"></i>
+            <i data-lucide="list-filter" class="icon-action" id="action-filter"></i>
 
-            <i data-lucide="arrow-down-wide-narrow" class="icon-action"></i>
+            <i data-lucide="arrow-down-wide-narrow" class="icon-action" id="action-sort"></i>
 
-            <i data-lucide="search" class="icon-action"></i>
+            <i data-lucide="search" class="icon-action" id="action-search"></i>
 
-            <button class="btn-primary">
+            <button class="btn-primary" id="btn-new-task">
               <i data-lucide="plus" class="icon"></i>
               New Task
             </button>
@@ -146,7 +146,7 @@
             </div>
 
             <!-- Column Task -->
-            <div class="column-task">
+            <div class="column-task" id="tasks-todo">
               <div class="task">
                 <h4>IA for FlexTrip</h4>
                 <div class="action">
@@ -159,7 +159,7 @@
               </div>
             </div>
 
-            <button class="btn-secondary">
+            <button class="btn-secondary" id="btn-add-todo">
               <i data-lucide="plus" class="icon"></i>
               Add Task
             </button>
@@ -174,7 +174,7 @@
             </div>
 
             <!-- Column Task -->
-            <div class="column-task">
+            <div class="column-task" id="tasks-inprogress">
               <div class="task">
                 <h4>Design landing page</h4>
                 <div class="action">
@@ -187,7 +187,7 @@
               </div>
             </div>
 
-            <button class="btn-secondary">
+            <button class="btn-secondary" id="btn-add-inprogress">
               <i data-lucide="plus" class="icon"></i>
               Add Task
             </button>
@@ -201,7 +201,7 @@
             </div>
 
             <!-- Column Task -->
-            <div class="column-task">
+            <div class="column-task" id="tasks-completed">
               <div class="task">
                 <h4>PRD review with PM</h4>
                 <div class="action">
@@ -240,7 +240,7 @@
               </div>
             </div>
 
-            <button class="btn-secondary">
+            <button class="btn-secondary" id="btn-add-completed">
               <i data-lucide="plus" class="icon"></i>
               Add Task
             </button>
@@ -254,7 +254,7 @@
             </div>
 
             <!-- Column Task -->
-            <div class="column-task">
+            <div class="column-task" id="tasks-overdue">
               <div class="task">
                 <h4>Create content calendar</h4>
                 <div class="action">
@@ -267,12 +267,114 @@
               </div>
             </div>
 
-            <button class="btn-secondary">
+            <button class="btn-secondary" id="btn-add-overdue">
               <i data-lucide="plus" class="icon"></i>
               Add Task
             </button>
           </div>
         </div>
+      </div>
+
+      
+
+      <!-- Action Popover -->
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>Add New Task</h2>
+          <button class="close-btn" id="close-modal">
+            <i data-lucide="x" class="icon"></i>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form id="add-task-form">
+            <div class="form-group">
+              <label for="task-title">Task Title</label>
+              <input
+                type="text"
+                id="task-title"
+                placeholder="Enter task name"
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="task-desc">Description</label>
+              <textarea
+                id="task-desc"
+                placeholder="Type something"
+                class="form-input textarea"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="task-start-date">Start Date</label>
+              <div class="input-with-icon">
+                <i data-lucide="calendar" class="input-icon"></i>
+                <input
+                  type="text"
+                  id="task-start-date"
+                  placeholder="dd/mm/yy"
+                  class="form-input padding-left"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="task-end-date">End Date</label>
+              <div class="input-with-icon">
+                <i data-lucide="calendar" class="input-icon"></i>
+                <input
+                  type="text"
+                  id="task-end-date"
+                  placeholder="dd/mm/yy"
+                  class="form-input padding-left"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="task-status">Status</label>
+              <div class="custom-select" id="task-status">
+                <div class="selected-option">
+                  <span class="status-pill n">Not Started</span>
+                </div>
+                <i data-lucide="chevron-down" class="select-icon"></i>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-ghost" id="btn-cancel">Cancel</button>
+          <button class="btn-primary" id="btn-create-task">
+            Create Task
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Action Popover -->
+    <div class="popover" id="action-popover">
+      <div class="popover-item">
+        <i data-lucide="pencil" class="popover-icon"></i>
+        <span>Edit Task</span>
+      </div>
+      <div class="popover-item">
+        <i data-lucide="expand" class="popover-icon"></i>
+        <span>Expand View</span>
+      </div>
+      <div class="popover-item delete">
+        <i data-lucide="trash-2" class="popover-icon"></i>
+        <span>Delete Task</span>
       </div>
     </div>
     <script>
